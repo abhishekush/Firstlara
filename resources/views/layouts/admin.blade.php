@@ -234,7 +234,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
                     @yield('content')
                 </div>
                 <!-- /.col-lg-12 -->
@@ -251,8 +250,6 @@
 <!-- jQuery -->
 <script type='text/javascript' src="{{asset('/js/libs.js')}}"></script>
 
-<?php $actual_link = "$_SERVER[REQUEST_URI]"; ?>
-<h1>{{$actual_link}}</h1>
 </body>
 
 </html>
