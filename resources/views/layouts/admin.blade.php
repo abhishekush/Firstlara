@@ -89,10 +89,9 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panels-wells.html">All Users</a>
-                            </li>
+                                <a href="{{route('users.index')}}">All Users</a>
                             <li>
-                                <a href="buttons.html">Create User</a>
+                                <a href="{{route('users.create')}}">Create User</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

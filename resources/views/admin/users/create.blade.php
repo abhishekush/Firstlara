@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <h1>Create Users</h1>
-    {!! Form::open(['method'=>'Post','action'=>'AdminUsersController@store']) !!}
+    {!! Form::open(['method'=>'Post','action'=>'AdminUsersController@store','files'=>true]) !!}
     <div class="form-group">
         {!! Form::label('name','Name') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
@@ -23,8 +23,8 @@
         {!! Form::select('is_active',array('1'=>'Active','0'=>'Not Active'),0,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('filepassword','File') !!}
-        {!! Form::file('file',null,['class'=>'form-control']) !!}
+        {!! Form::label('photo','Photo') !!}
+        {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::SUBMIT('Create Post',['class'=>'btn btn-primary']) !!}
