@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UsersRequest;
+use App\Http\Requests\UsersEditRequest;
 use App\Photo;
 use App\Role;
 use App\User;
@@ -77,6 +78,10 @@ class AdminUsersController extends Controller
     public function edit($id)
     {
         //
+
+        $user=User::findOrFail($id);
+        $role=Role::pluck('name','id')->all();
+        return view('admin/users/edit',compact('user','role'));
     }
 
     /**
@@ -86,9 +91,26 @@ class AdminUsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UsersEditRequest $request, $id)
     {
         //
+        if(trim($request->password)==''){
+            $input=$request->except('password');
+        }
+        else{
+            $input=$request->all();
+            $input['password']=bcrypt($request->password);
+        }
+        $user=User::findOrFail($id);
+        if($file=$request->file('photo_id')){
+            $name=time().$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo=Photo::create(['file'=>$name]);
+            $input['photo_id']=$photo->id;
+        }
+
+          $user->update($input);
+          return redirect('/admin/users');
     }
 
     /**
@@ -100,5 +122,7 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
         //
+        User::findOrFail($id)->delete();
+        return redirect('/admin/users');
     }
 }
