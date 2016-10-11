@@ -23,7 +23,7 @@
         @foreach($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
-                <td><img height="50" src="{{$user->photo?$user->photo->file:"No Photo"}}" alt=""/></td>
+                <td><img height="50" src="{{$user->photo?$user->photo->file:'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150'}}" alt=""/></td>
                 <td><a href="{{route('users.edit',$user->id)}}">{{$user->name}}</a></td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->role->name}}</td>
