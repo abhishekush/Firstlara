@@ -31,17 +31,18 @@
         {!! Form::label('status','Status') !!}
         {!! Form::select('is_active',array('1'=>'Active','0'=>'Not Active'),null,['class'=>'form-control']) !!}
     </div>
-    <div class="row pull-right">
-    <div class="form-group col-md-5 ">
+<div class="row">
+    <div class="form-group col-md-1 pull-right">
         {!! Form::SUBMIT('Edit User',['class'=>'btn btn-primary']) !!}
     </div>
+    {!! Form::close() !!}
         {!! Form::model($user,['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id]]) !!}
-        <div class="form-group col-md-4">
+        <div class="form-group  pull-right">
             {!! Form::SUBMIT('Delete User',['class'=>'btn btn-danger']) !!}
         </div>
         {!! Form::close() !!}
-    {!! Form::close() !!}
-    </div>
+
+</div>
     </div>
 
 

@@ -31,6 +31,7 @@
         {!! Form::SUBMIT('Create Post',['class'=>'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
+
     </div>
   <div class="row">
      @include('includes.form_error')
