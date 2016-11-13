@@ -37,7 +37,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 * `npm install`
 * Create a database and inform *.env*
 * `php artisan migrate` to create tables
-* `gulp` to run gulp
+* `gulp` to run gulp (First install gulp if not already installed)
 * `php artisan serve` to start the app on http://localhost:8000/
 
 
