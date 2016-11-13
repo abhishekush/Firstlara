@@ -25,3 +25,39 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+# CMS in Laravel 5.3 #
+
+
+### Installation ###
+
+* `git clone https://github.com/bestmomo/laravel5-example.git projectname`
+* `cd projectname`
+* `composer install`
+* `npm install`
+* Create a database and inform *.env*
+* `php artisan migrate` to create tables
+* `gulp` to run gulp
+* `php artisan serve` to start the app on http://localhost:8000/
+
+
+
+### Include ###
+
+* [Bootstrap](http://getbootstrap.com) for CSS and jQuery plugins
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome) for the nice icons
+* [Startbootstrap](http://startbootstrap.com) for the free templates
+
+### Features ###
+
+* Home page
+* Custom Error Page 404
+* Authentication (registration, login, logout)
+* Users roles 
+* Admin dashboard with users, posts and comments
+* Users admin (roles filter, show, edit, delete, create)
+* Posts admin (list with dynamic order, show, edit, delete, create)
+
+### Packages included ###
+
+* laravelcollective/html
